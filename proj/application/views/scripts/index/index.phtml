@@ -1,0 +1,26 @@
+<?php
+header("Content-Type: text/html; charset=utf-8");
+if ($this->url) {
+	$log = "<center><a href='authentication/logout'>logout</a></center></div>";
+	$adminpanel = "<li><a href='Adminpanel'>Админ панель</a></li>";
+}
+else {
+	$log = "<center><a href='authentication/login'>login</a></center></div>";
+}
+//echo "<div class='right'><a href='Adminpanel'>".$this->form."</a>".$log."</div>";
+//echo "<div class='clear'>";
+//echo "<ul type=none>";
+//foreach ($this->menu as $val) {
+	//echo "<li><a href='http://proj/?n=".$val['page_name']."'>".$val['page_name']."</a></li>";
+	//echo "<li><a href='http://proj/main".$val['page_name']."'>".$val['page_name']."</a></li>";
+//}
+//var_dump($this->menu);
+//var_dump($this->content);
+echo "<div class='cent'>";
+$text = wordwrap($this->content[0]["page_text"], 100, "<br />\n");
+echo $text;
+//echo "</div>";
+echo "</div>";
+
+?>
+

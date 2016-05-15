@@ -1,0 +1,80 @@
+<style>
+#center {
+	border: 1px solid black;
+}
+
+    a:link,
+    a:visited
+    {
+        color: #0398CA;
+    }
+
+    span#zf-name
+    {
+        color: #91BE3F;
+    }
+
+    div#welcome
+    {
+        color: #FFFFFF;
+        background-image: url(http://framework.zend.com/images/bkg_header.jpg);
+        width:  600px;
+        height: 400px;
+        border: 2px solid #444444;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    div#more-information
+    {
+        background-image: url(http://framework.zend.com/images/bkg_body-bottom.gif);
+        height: 100%;
+    }
+	.right {
+		float: right;
+		margin-bottom: 20px;
+	}
+	div {
+		border: 1px solid black;
+	}
+	dd, dt {
+		float: left;
+		margin: 0px;
+		padding: 0px;
+	}
+	.clear {
+		clear: both;
+	}
+	.main {
+		margin: 0 auto;
+		width: 60%;
+	}
+</style>
+
+<?php
+header("Content-Type: text/html; charset=utf-8");
+echo "main<div class='main'>";
+//echo "<div class='right'>".$this->form;
+if ($this->url) {
+	$log = "<center><a href='authentication/logout'>logout</a></center></div>";
+	$adminpanel = "<li><a href='Adminpanel'>Админ панель</a></li>";
+}
+else {
+	$log = "<center><a href='authentication/login'>login</a></center></div>";
+}
+echo "<div class='right'>".$this->form.$log;
+echo "<div class='clear'>";
+echo "<ul type=none>";
+foreach ($this->menu as $val) {
+	echo "<li><a href='http://proj/?n=".$val['page_name']."'>".$val['page_name']."</a></li>";
+	//echo "<li><a href='http://proj/main".$val['page_name']."'>".$val['page_name']."</a></li>";
+}
+echo $adminpanel;
+//var_dump($this->menu);
+//var_dump($this->content);
+echo "</ul>";
+echo $this->content[0]["page_text"];
+echo "</div>";
+echo "</div>";
+?>
+

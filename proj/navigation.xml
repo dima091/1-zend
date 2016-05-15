@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<nav>
+		<general>
+			<label>general</label>
+			<controller>index</controller>
+			<action>index</action>
+		</general>
+		<about>
+			<label>about</label>
+			<controller>first</controller>
+			<action>index</action>
+		</about>
+	</nav>
+</config>

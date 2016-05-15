@@ -1,0 +1,47 @@
+<style>
+.izm {
+	color: red;
+	box-sizing: border-box;
+	margin: 5%;
+}
+p {
+	border: 1px solid black;
+}
+</style>
+<?php
+header("Content-Type: text/html; charset=utf-8");
+
+echo "<div class='meta'>";?>
+<div class='izm'>
+<h1>Изменить meta</h1>
+<form method='post' action='adminpanel'>
+<table>
+	<tr>
+		<td>title:</td>
+		<td><textarea name="title"><?php echo $this->meta[0]['title']?>
+		</textarea></td>
+	</tr>
+	<tr>
+		<td>keywords:</td>
+		<td><textarea name="keywords"><?php echo $this->meta[0]['keywords']?>
+		</textarea></td>
+	</tr>
+	<tr>
+		<td>description:</td>
+		<td><textarea name="description"><?php echo $this->meta[0]['description']?>
+		</textarea></td>
+	</tr>
+	<tr><td><input type="submit"></td></tr>
+</table>
+</form>
+</div>
+<div class='izm'>
+<?php
+echo "<h1>Изменить</h1>";
+for ($i=0; $i<6; $i++) {
+	$pages = "<a href='".$this->list[$i]['page']."'>".$this->list[$i]['page_name']."</a>  ";
+	echo $pages;
+}
+//echo $pages;
+echo "</div>";
+?>

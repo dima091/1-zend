@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<nav>
+		<general>
+			<label>Главная</label>
+			<controller>index</controller>
+			<action>index</action>
+		</general>
+		<gener>
+			<label>Инфо</label>
+			<controller>info</controller>
+			<action>index</action>
+		</gener>
+		<about>
+			<label>О компании</label>
+			<controller>about</controller>
+			<action>index</action>
+			<pages>
+				<list>
+					<label>Работа</label>
+					<controller>about</controller>
+					<action>work</action>
+				</list>
+				<list1>
+					<label>Отдых</label>
+					<controller>about</controller>
+					<action>rest</action>
+				</list1>
+			</pages>
+		</about>
+		<gen>
+			<label>Контакты</label>
+			<controller>contacts</controller>
+			<action>index</action>
+		</gen>
+	</nav>
+</config>

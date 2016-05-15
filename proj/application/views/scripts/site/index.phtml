@@ -1,0 +1,15 @@
+<?php
+header("Content-Type: text/html; charset=utf-8");
+//echo $this->tab;
+echo "<ul type=none>";
+foreach ($this->menu as $val) {
+	echo "<li><a href='http://proj/site?n=".$val['page_name']."'>".$val['page_name']."</a></li>";
+}
+//var_dump($this->menu);
+//var_dump($this->content);
+echo $this->content[0]["page_text"];
+
+echo $this->form;
+
+
+?>

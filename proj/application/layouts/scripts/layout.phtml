@@ -1,0 +1,114 @@
+<?php echo $this->doctype(); 
+header("Content-Type: text/html; charset=utf-8");?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title><?php echo $this->layout()->meta[0]['title'];?></title>
+  <meta name="keywords" content=<?php echo $this->layout()->meta[0]['keywords'];?>>
+  <meta name="description" content=<?php echo $this->layout()->meta[0]['description'];?>>
+  <title><?php echo $this->layout()->meta[0]['title'];?></title>
+  <?php //echo $this->headLink()->appendStylesheet('css/global.css');?>
+  <?php //echo $this->headLink()->appendStylesheet($this->baseUrl.'../css/style.css');?>
+  <?php //echo $this->headLink()->setStylesheet('/css/style.css');?>
+  <style>
+	body {
+		background-color: #F3F8F1;
+	}
+	#center {
+		border: 1px solid black;
+	}
+	a {
+		text-decoration: none;
+	}
+    a:link,
+    a:visited
+    {
+        1color: #0398CA;
+    }
+	ul a {
+		color: white;
+	}
+
+	.right {
+		float: right;
+		margin-bottom: 20px;
+		position: relative;
+		top: 0px;
+	}
+	div {
+		border: 1px solid black;
+	}
+	dd, dt {
+		float: left;
+		margin: 0px;
+		padding: 0px;
+	}
+	.clear {
+		clear: both;
+	}
+	.main {
+		margin: 0 auto;
+		width: 60%;
+		position: relative;
+		overflow-y: hidden;
+		box-sizing: border-box;
+		background-color: white;
+	}
+	ul, li {
+		type: none;
+		display: inline-block;
+		border: 1px solid black;
+		box-sizing: border-box;
+		padding-left: 15px;
+	}
+	
+
+
+	li>ul>li {
+		display: non;
+	}
+	#log {
+		float: right;
+		min-width: 90%;
+		text-align: right;
+		
+	}
+	.cent {
+		margin: 5% 10% 5% 10%;
+	}
+	.menu {
+		background-color: #2B8E9C;
+		height: 50px;
+		clear: both;
+	}
+	#login {
+		float: right;
+	}
+  </style>
+</head>
+<body>
+<div class="main">
+<?php
+$form = $this->layout()->form;
+if ($this->url) {
+	$log = "<a href='authentication/logout'>logout</a></center>";
+	$form = "<a href='adminpanel'>".$this->layout()->form."</a>";
+}
+else {
+	$log = "<br/><a href='authentication/login'>login</a>";
+}
+echo "<div id='log'>".$form."<br/>".$log."</div>"; ?>
+<?php echo "<div class='menu'>".$this->navigation()."</div>";?>
+<?php echo $this->layout()->content; ?>
+</div>
+<script>
+	var li = document.getElementsByTagName('a');
+	//alert(li.length);
+	for(var i=0; i<li.length; i++) {
+		if (li[i].innerHTML == "О компании") {
+			li[i].setAttribute("id", "about");
+		}
+	}
+</script>
+</body>
+</html>
